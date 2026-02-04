@@ -1,0 +1,32 @@
+/**
+ * -------------------------------------
+ * @file  testing.txt
+ * Lab 4 Test Results File
+ * -------------------------------------
+ * @author name, id, email
+ *
+ * @version 2025-09-01
+ *
+ * -------------------------------------
+ */
+------------------------
+read_strings
+
+count: 3
+------------------------
+Contents of source:
+
+A short line
+A longer line
+A really long line that never seems to end and goes on and on
+
+------------------------
+Test strings_with_substring
+
+Enter substring: long
+A longer line
+A really long line that never seems to end and goes on and on
+------------------------
+Test strings_length
+
+Enter the length comparison value: 12

@@ -1,0 +1,41 @@
+/**
+ * -------------------------------------
+ * @file  testing.txt
+ * -------------------------------------
+ * @Zivkovic Lukq, 169102858, zivk2858@mylaurier.ca
+ *
+ * @version 2026-01-15
+ *
+ * -------------------------------------
+ */
+Results:
+luka@MacBookPro src % ./l01
+Program Parameters:
+
+  No user parameters specified.
+
+  Argument 0 is a system default, and is always passed to the main program.
+  Argument 0 is the path and name of the executable file.
+
+  argc: 1
+  argv[0] = "./l01"
+luka@MacBookPro src % ./l01 A 1 "some strings"
+Program Parameters:
+
+  argc: 4
+
+  argv[0] = "./l01"
+  argv[1] = "A"
+  argv[2] = "1"
+  argv[3] = "some strings"
+luka@MacBookPro src % ./l01 B 2 some strings  
+Program Parameters:
+
+  argc: 5
+
+  argv[0] = "./l01"
+  argv[1] = "B"
+  argv[2] = "2"
+  argv[3] = "some"
+  argv[4] = "strings"
+luka@MacBookPro src % 

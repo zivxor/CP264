@@ -1,0 +1,41 @@
+========================================
+           CP264 - Lab 3 Testing
+========================================
+Author: Zivkovic Luka
+ID:     169102858
+Email:  Zivk2858@mylaurier.ca
+Date:   2026-01-26
+========================================
+
+--------------- TESTING ----------------
+
+luka@Lukas-MacBook-Pro-2 src % gcc int_array_read.c sum_integers.c sum_three_integers.c main.c -o l3
+luka@Lukas-MacBook-Pro-2 src % ./l3
+Test: sum_integers
+
+Enter integers, one per line: 
+1
+2
+3
+4
+q
+Sum: 10
+
+Test: sum_three_integers
+
+Enter three comma-separated integers: The integers were not properly entered.
+Enter three comma-separated integers: Zero,2,3
+The integers were not properly entered.
+Enter three comma-separated integers: 1,2,3
+Sum: 6
+
+Test: int_array_read
+
+Enter 4 values for an array of int.
+Value for index 0: zero
+Not a valid integer
+Value for index 0: 0
+Value for index 1: 1
+Value for index 2: 2
+Value for index 3: 3
+{0, 1, 2, 3}
