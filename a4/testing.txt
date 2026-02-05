@@ -5,6 +5,10 @@ zivk2858@mylaurier.ca
 04-02-2026
 Testing for a4
 -----------------------------------
+luka@Zivxor ~/repos/CP264/a4 [main]: make
+make: Nothing to be done for `all'.
+luka@Zivxor ~/repos/CP264/a4 [main]: make run_q1
+./q1
 ------------------
 Test: selection_sort
 
@@ -32,9 +36,9 @@ cmp_sort(5 4 3 2 1 cmp_dec): 5 4 3 2 1
 cmp_sort(3 1 4 1 5 cmp_dec): 5 4 3 1 1
 cmp_sort(3 1 4 5 2 7 6 9 8 0 cmp_dec): 9 8 7 6 5 4 3 2 1 0
 cmp_sort(1 4 2 8 5 7 cmp_dec): 8 7 5 4 2 1
-----------------------
-q2
-----------------------
+
+luka@Zivxor ~/repos/CP264/a4 [main]: make run_q2
+./q2
 ------------------
 Test: grade
 
