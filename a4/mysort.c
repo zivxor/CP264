@@ -34,10 +34,12 @@ void quick_sort(void *a[], int left, int right) {
     int i = left + 1;
     int j = right;
     while (i <= j) {
-      while (i <= right && cmp(a[i], a[left]) <= 0)
+      while (i <= right && cmp(a[i], a[left]) <= 0) {
         i++;
-      while (j >= left && cmp(a[j], a[left]) > 0)
+      }
+      while (j >= left && cmp(a[j], a[left]) > 0) {
         j--;
+      }
       if (i < j) {
         swap(&a[i], &a[j]);
       }
