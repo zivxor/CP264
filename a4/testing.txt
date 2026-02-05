@@ -1,0 +1,34 @@
+-----------------------------------
+Zivkovic Luka
+zivk2858@mylaurier.ca
+169102858
+04-02-2026
+Testing for a4
+-----------------------------------
+------------------
+Test: selection_sort
+
+selection_sort(5 4 3 2 1): 1 2 3 4 5
+selection_sort(3 1 4 1 5): 1 1 3 4 5
+selection_sort(3 1 4 5 2 7 6 9 8 0): 0 1 2 3 4 5 6 7 8 9
+selection_sort(1 4 2 8 5 7): 1 2 4 5 7 8
+
+------------------
+Test: quick_sort
+
+quick_sort(5 4 3 2 1): 1 2 3 4 5
+quick_sort(3 1 4 1 5): 1 1 3 4 5
+quick_sort(3 1 4 5 2 7 6 9 8 0): 0 1 2 3 4 5 6 7 8 9
+quick_sort(1 4 2 8 5 7): 1 2 4 5 7 8
+
+------------------
+Test: cmp_sort
+
+cmp_sort(5 4 3 2 1 cmp_inc): 1 2 3 4 5
+cmp_sort(3 1 4 1 5 cmp_inc): 1 1 3 4 5
+cmp_sort(3 1 4 5 2 7 6 9 8 0 cmp_inc): 0 1 2 3 4 5 6 7 8 9
+cmp_sort(1 4 2 8 5 7 cmp_inc): 1 2 4 5 7 8
+cmp_sort(5 4 3 2 1 cmp_dec): 5 4 3 2 1
+cmp_sort(3 1 4 1 5 cmp_dec): 5 4 3 1 1
+cmp_sort(3 1 4 5 2 7 6 9 8 0 cmp_dec): 9 8 7 6 5 4 3 2 1 0
+cmp_sort(1 4 2 8 5 7 cmp_dec): 8 7 5 4 2 1

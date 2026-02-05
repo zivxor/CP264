@@ -1,3 +1,11 @@
+#include "mysort.h"
+#include <stdio.h>
+
+void swap(void **x, void **y) {
+  void *temp = *x;
+  *x = *y;
+  *y = temp;
+}
 /**
  * Use selection sort algorithm to sort array of pointers such that their
  * pointed values are in increasing order.
@@ -31,22 +39,19 @@ void selection_sort(void *a[], int left, int right) {
  */
 void quick_sort(void *a[], int left, int right) {
   if (left < right) {
-    int i = left + 1;
-    int j = right;
-    while (i <= j) {
-      while (i <= right && cmp(a[i], a[left]) <= 0) {
+    void *pivot = a[right];
+    int i = left - 1;
+    for (int j = left; j < right; j++) {
+      if (*(float *)a[j] < *(float *)pivot) {
         i++;
-      }
-      while (j >= left && cmp(a[j], a[left]) > 0) {
-        j--;
-      }
-      if (i < j) {
         swap(&a[i], &a[j]);
       }
     }
-    swap(&a[left], &a[j]);
-    quick_sort(a, left, j - 1);
-    quick_sort(a, j + 1, right);
+    swap(&a[i + 1], &a[right]);
+    int pivotIndex = i + 1;
+
+    quick_sort(a, left, pivotIndex - 1);
+    quick_sort(a, pivotIndex + 1, right);
   }
 }
 
@@ -70,7 +75,7 @@ void cmp_sort(void *a[], int left, int right, int (*cmp)(void *, void *)) {
       }
     }
     if (min != i) {
-      swap(a[i], a[min]);
+      swap(&a[i], &a[min]);
     }
   }
 }

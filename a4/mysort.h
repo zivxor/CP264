@@ -18,7 +18,7 @@ void selection_sort(void *a[], int left, int right);
  * @param left - the start index of pointer in array.
  * @param right - the end index of pointer in array
  */
-void quick_sort(void *a[], int left, int right) {}
+void quick_sort(void *a[], int left, int right);
 
 /**
  * Use either selection or quick sort algorithm to sort array of pointers
