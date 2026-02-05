@@ -6,6 +6,16 @@ void swap(void **x, void **y) {
   *x = *y;
   *y = temp;
 }
+int cmp(void *x, void *y) {
+  float a = *(float *)x;
+  float b = *(float *)y;
+  if (a > b)
+    return 1;
+  else if (a < b)
+    return -1;
+  else
+    return 0;
+}
 /**
  * Use selection sort algorithm to sort array of pointers such that their
  * pointed values are in increasing order.
@@ -15,17 +25,16 @@ void swap(void **x, void **y) {
  * @param right - the end index of pointer in array
  */
 void selection_sort(void *a[], int left, int right) {
-  for (int i = left; i <= right; i++) { // loop from left until right index
-    int min_idx = i;
+  for (int i = left; i < right; i++) {
+    int min = i;
     for (int j = i + 1; j <= right; j++) {
-      if (*(float *)a[j] < *(float *)a[min_idx]) {
-        min_idx = j;
+      if (cmp(a[j], a[min]) < 0) {
+        min = j;
       }
     }
-    // Swap a[i] and a[min_idx]
-    void *temp = a[i];
-    a[i] = a[min_idx];
-    a[min_idx] = temp;
+    if (min != i) {
+      swap(&a[i], &a[min]);
+    }
   }
 }
 
@@ -39,19 +48,22 @@ void selection_sort(void *a[], int left, int right) {
  */
 void quick_sort(void *a[], int left, int right) {
   if (left < right) {
-    void *pivot = a[right];
-    int i = left - 1;
-    for (int j = left; j < right; j++) {
-      if (*(float *)a[j] < *(float *)pivot) {
-        i++;
-        swap(&a[i], &a[j]);
+    void *pivot = a[right]; // Choose the last element as the pivot
+    int i = left - 1; // i will track the end of the "less than pivot" section
+    for (int j = left; j < right; j++) { // j scans from left to right-1
+      if (cmp(a[j], pivot) < 0) { // If current element is less than pivot
+        i++; // Move the boundary of "less than pivot" section
+        swap(&a[i],
+             &a[j]); // Swap current element into the "less than pivot" section
       }
     }
-    swap(&a[i + 1], &a[right]);
-    int pivotIndex = i + 1;
+    swap(&a[i + 1],
+         &a[right]); // Place the pivot after the last "less than" element
+    int pivotIndex = i + 1; // The pivot is now at its correct sorted position
 
-    quick_sort(a, left, pivotIndex - 1);
-    quick_sort(a, pivotIndex + 1, right);
+    quick_sort(a, left, pivotIndex - 1); // Recursively sort the left partition
+    quick_sort(a, pivotIndex + 1,
+               right); // Recursively sort the right partition
   }
 }
 
@@ -67,15 +79,17 @@ void quick_sort(void *a[], int left, int right) {
  *                by their pointed values.
  */
 void cmp_sort(void *a[], int left, int right, int (*cmp)(void *, void *)) {
-  for (int i = left; i < right; i++) {
-    int min = i;
-    for (int j = i + 1; j <= right; j++) {
-      if (cmp(a[j], a[min]) < 0) {
-        min = j;
+  if (left < right) {
+    void *pivot = a[right];
+    int i = left - 1;
+    for (int j = left; j < right; j++) {
+      if ((*cmp)(a[j], pivot) < 0) {
+        i++;
+        swap(&a[i], &a[j]);
       }
     }
-    if (min != i) {
-      swap(&a[i], &a[min]);
-    }
+    swap(&a[i + 1], &a[right]);
+    cmp_sort(a, left, i, cmp);
+    cmp_sort(a, i + 2, right, cmp);
   }
 }
