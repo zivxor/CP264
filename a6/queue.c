@@ -1,0 +1,57 @@
+#include "common.h"
+#include <stdio.h>
+#include <stdlib.h>
+/*
+ * Define a structure QUEUE containing length and pointers of front and rare
+ * node. int length - maintains the length of queue, NODE *front - pointer to
+ * the front node of linked list queue NODE *rear - points to the rare node of
+ * linked list queue
+ */
+typedef struct queue {
+  int length;
+  NODE *front;
+  NODE *rear;
+} QUEUE;
+
+/*
+ * Enqueue a node into a queue
+ * @param *qp - pointer to the queue
+ * @param NODE *np - pointer to the node.
+ */
+void enqueue(QUEUE *qp, NODE *np) {
+  if (qp->length == 0) {
+    qp->front = np;
+    qp->rear = np;
+  } else {
+    qp->rear->next = np;
+    qp->rear = np;
+  }
+  qp->length++;
+}
+
+/*
+ * Dequeue and return the pointer of the removed node.
+ * @param *qp - pointer to the queue
+ * @return - the reference of the removed node, and set it's next to NULL
+ */
+NODE *dequeue(QUEUE *qp) {
+  if (qp->length == 0) {
+    return NULL;
+  }
+  NODE *temp = qp->front;
+  qp->front = qp->front->next;
+  temp->next = NULL;
+  qp->length--;
+  return temp;
+}
+
+/*
+ * Clean the linked list queue
+ * @param *qp - pointer to the queue
+ */
+void clean_queue(QUEUE *qp) {
+  while (qp->length > 0) {
+    NODE *temp = dequeue(qp);
+    free(temp);
+  }
+}
