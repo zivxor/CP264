@@ -1,0 +1,36 @@
+===========================================
+Zivkovic Luka
+169102858
+zivk2858@mylaurier.ca
+Mar 5, 20206
+===========================================
+Testing bst_linked
+-------------------------------------------
+source = bst_initialize():
+bst_print(source)
+  count: 0, height: 0, items:
+{}
+-------------------------------------------
+bst_empty(source): true
+-------------------------------------------
+bst_insert(source, 11)
+bst_insert(source, 7)
+bst_insert(source, 6)
+bst_insert(source, 9)
+bst_insert(source, 8)
+bst_insert(source, 15)
+bst_insert(source, 12)
+bst_insert(source, 18)
+bst_print(source)
+  count: 8, height: 4, items:
+{11, 7, 6, 9, 8, 15, 12, 18, }
+-------------------------------------------
+bst_empty(source): false
+-------------------------------------------
+bst_count(source): 8
+-------------------------------------------
+
+other tests here
+
+-------------------------------------------
+bst_destroy(&source)
