@@ -1,0 +1,139 @@
+===================================
+Zivkvoic Luka
+169102858
+zivk2858@mylaurier.ca
+Mar 5, 2026
+===================================
+luka@MacOps ~/CP264/a7 [main]: ./q1
+------------------
+Test start: create testing tree
+
+|___:* 
+    |___R:- 
+        |___R:1 
+        |___L:4 
+    |___L:+ 
+        |___R:2 
+        |___L:1 
+
+------------------
+Test: tree_info
+
+tree_info(root).order: 7
+tree_info(root).height: 3
+
+------------------
+Test: preorder
+
+preorder(root): * + 1 2 - 4 1 
+------------------
+Test: inorder
+
+inorder(root): 1 + 2 * 4 - 1 
+------------------
+Test: postorder
+
+postorder(root): 1 2 + 4 1 - * 
+------------------
+Test: bforder
+
+bforder(root): * + - 1 2 4 1 
+------------------
+Test: display_infix
+
+display_infix(root): ((1 + 2 )* (4 - 1 ))
+------------------
+Test: evaluate_tree
+
+evaluate_tree(root): 9
+------------------
+Test: bfs
+
+
+bfs(43): + 
+bfs(45): - 
+bfs(1): 1 
+bfs(10): NULL
+------------------
+Test: dfs
+
+
+dfs(3): NULL
+dfs(45): - 
+dfs(42): * 
+dfs(37): NULL
+------------------
+Test end: clean testing tree
+
+=============================
+------------------
+Test: bst_insert 
+
+bst_insert(A4 40.0):A4 
+bst_insert(A2 20.0):A1 A2 A4 
+bst_insert(A8 80.0):A1 A2 A3 A4 A8 
+bst_insert(A6 60.0):A1 A2 A3 A4 A5 A6 A8 
+bst_insert(A9 90.0):A1 A2 A3 A4 A5 A6 A7 A8 A9 
+
+------------------
+Test: bst_search 
+
+bst_search(A2): A2 20.0
+bst_search(A4): A4 40.0
+bst_search(B2): NULL
+bst_search(A8): A8 80.0
+
+------------------
+Test: bst_delete
+
+bst_delete(A1): A2 A3 A4 A5 A6 A7 A8 A9 B1 
+bst_delete(A3): A2 A4 A5 A6 A7 A8 A9 B1 
+bst_delete(A5): A2 A4 A6 A7 A8 A9 B1 
+bst_delete(B1): A2 A4 A6 A7 A8 A9 
+===============================
+------------------
+Test: add_record
+
+add_record(A04 40.0): count 1 mean 40.0 stddev 0.0
+
+add_record(A01 10.0): count 2 mean 25.0 stddev 15.0
+
+add_record(A02 20.0): count 3 mean 23.3 stddev 12.5
+
+add_record(A03 30.0): count 4 mean 25.0 stddev 11.2
+
+add_record(A08 80.0): count 5 mean 36.0 stddev 24.2
+
+add_record(A05 50.0): count 6 mean 38.3 stddev 22.7
+
+add_record(A06 60.0): count 7 mean 41.4 stddev 22.3
+
+add_record(A07 70.0): count 8 mean 45.0 stddev 22.9
+
+add_record(A09 90.0): count 9 mean 50.0 stddev 25.8
+
+add_record(A10 100.0): count 10 mean 55.0 stddev 28.7
+
+
+------------------
+Test: remove_record
+
+remove_record(A10): count 9 mean 50.0 stddev 25.8
+
+remove_record(A09): count 8 mean 45.0 stddev 22.9
+
+remove_record(A07): count 7 mean 41.4 stddev 22.3
+
+remove_record(A06): count 6 mean 38.3 stddev 22.7
+
+remove_record(A05): count 5 mean 36.0 stddev 24.2
+
+remove_record(A08): count 4 mean 25.0 stddev 11.2
+
+remove_record(A03): count 3 mean 23.3 stddev 12.5
+
+remove_record(A02): count 2 mean 25.0 stddev 15.0
+
+remove_record(A01): count 1 mean 40.0 stddev 0.0
+
+remove_record(A04): count 0 mean 0.0 stddev 0.0
